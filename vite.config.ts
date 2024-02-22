@@ -106,11 +106,16 @@ export default defineConfig(({ mode }) => {
           globalsPropValue: true
         },
         dts: './auto-imports.d.ts',
-        resolvers: [ArcoResolver()]
+        resolvers: [
+          ArcoResolver(),
+          IconsResolver({
+            prefix: 'Icon'
+          })
+        ]
       }),
       Components({
         // imports 指定组件所在目录，默认为 src/components
-        dirs: ['src/components/', 'src/view/', 'src/layout'],
+        dirs: ['src/components/', 'src/views/', 'src/layout'],
         // 需要去解析的文件
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
         resolvers: [
@@ -123,7 +128,7 @@ export default defineConfig(({ mode }) => {
             // icon自动引入的组件前缀 - 为了统一组件icon组件名称格式
             prefix: 'icon',
             // 自定义的icon模块集合
-            customCollections: []
+            enabledCollections: ['ep']
           })
         ]
       }),
@@ -131,7 +136,7 @@ export default defineConfig(({ mode }) => {
       Icons({
         compiler: 'vue3',
         customCollections: {
-          // user图标集，给svg文件设置 fill="currentColor" 属性，使图标的颜色具有适应性
+          // user图标集，给svg文件设置fill="currentColor"属性，使图标的颜色具有适应性
           user: FileSystemIconLoader('src/assets/svg/user', svg =>
             svg.replace(/^<svg /, '<svg fill="currentColor" ')
           ),

@@ -24,7 +24,9 @@
     "./*.d.ts",
     "./auto-imports.d.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  //icons配置
+  "types": ["unplugin-icons/types/vue"]
   // "files": []
   // "references": [
   //   {
