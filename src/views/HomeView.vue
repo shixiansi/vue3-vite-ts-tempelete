@@ -1,4 +1,6 @@
-<template><HelloWorld></HelloWorld></template>
+<template>
+  <HelloWorld></HelloWorld>
+</template>
 
 <script setup></script>
 
