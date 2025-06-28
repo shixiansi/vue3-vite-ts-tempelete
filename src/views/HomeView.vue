@@ -1,4 +1,4 @@
-<template><div></div></template>
+<template><HelloWorld></HelloWorld></template>
 
 <script setup></script>
 
